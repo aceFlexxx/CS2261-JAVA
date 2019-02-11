@@ -1,9 +1,10 @@
+elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  cat InCircle.java
 //This program executes ex3.29
 import java.util.Scanner;
 import java.lang.Math;
 
 public class InCircle
-{    
+{
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
@@ -14,14 +15,14 @@ public class InCircle
 
         System.out.print("Enter circle2 info in format x-coord, y-coord, radius: ");
         double x2 = input.nextDouble();
-        double y2 = input.nextDouble();
+	double y2 = input.nextDouble();                                                                                    [0/611]
         double radius2 = input.nextDouble();
-        
+
         String response = computeResponse(x1, y1, radius1, x2, y2, radius2);
-        
+
         System.out.print(response);
     }
-   
+
     //This method discovers if a circle is overlapping, inside, or neither relative to another given circle. It then returns the info.
     public static String computeResponse(double x1, double y1, double radius1, double x2, double y2, double radius2)
     {
@@ -43,5 +44,18 @@ public class InCircle
         }
 
     }
-    
+
 }
+ elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  javac InCircle.java
+ elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  java InCircle
+Enter circle1 info in format x-coord, y-coord, radius: 0.2 -.5 5
+Enter circle2 info in format x-coord, y-coord, radius: 0.1 -.5 2
+Circle2 is inside circle1.%
+ elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  java InCircle
+Enter circle1 info in format x-coord, y-coord, radius: 0 0 2
+Enter circle2 info in format x-coord, y-coord, radius: 2 1.1 5
+Circle2 is overlapping circle1.%
+ elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  java InCircle
+Enter circle1 info in format x-coord, y-coord, radius: 0 0 1
+Enter circle2 info in format x-coord, y-coord, radius: 10 10.233 1
+Circle2 is neither inside or overlapping circle1.%

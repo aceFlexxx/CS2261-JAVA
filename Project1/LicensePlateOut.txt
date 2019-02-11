@@ -1,0 +1,55 @@
+elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  cat LicensePlate.java
+//This program generates random license plates
+import java.util.Scanner;
+import java.lang.Math;
+
+public class LicensePlate
+{
+    public static void main(String[] args)
+    {
+        createPlate();
+
+    }
+
+    public static void createPlate()
+    {
+
+        char charDisp1;
+        char charDisp2;
+        char charDisp3;
+        char charDisp4;
+        char charDisp5;
+        char charDisp6;
+
+        String licensePlate = "";
+
+        System.out.println("Here are 10 random license plates:");
+
+        for(int i = 0; i < 10; i++)//Create each char for the plate using random function
+        {
+            charDisp1 = (char)(65 + Math.random()*26);
+            charDisp2 = (char)(65 + Math.random()*26);
+            charDisp3 = (char)(48 + Math.random()*10);
+            charDisp4 = (char)(48 + Math.random()*10);
+            charDisp5 = (char)(65 + Math.random()*26);
+            charDisp6 = (char)(48 + Math.random()*10);
+
+            licensePlate = charDisp1 + "" + charDisp2 + "" + charDisp3 + " " + charDisp4 + "" + charDisp5 + "" + charDisp6;
+            System.out.println(licensePlate);
+        }
+
+    }
+}
+ elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  javac LicensePlate.java
+ elijahkorneffel@Elijahs-MacBook-Pro  ~/Git/CS2261-JAVA/Project1   02_10_19 ●  java LicensePlate
+Here are 10 random license plates:
+IP3 6L9
+IY8 0T3
+DG6 0Z3
+OS4 9K6
+XW6 3G2
+HF7 7A9
+WJ1 3K2
+KO3 2K7
+NS7 8Z8
+NE8 3K2
