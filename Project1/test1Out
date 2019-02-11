@@ -1,15 +1,0 @@
-Script started on Sun Feb 10 14:18:03 2019
-[1m[7m%[27m[1m[0m                                                                ]2;elijahkorneffel@Elijahs-MacBook-Pro: ~/Git/CS2261-JAVA/Project1]1;..JAVA/Project1[0m[27m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_10_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m T [4mt[24m[4mt[4me[24m[4me[4ms[24m[4ms[4mt[24m[24mt[24me[24ms[24mt2[4mt[4me[4ms[4mt[24m [4mt[4m1[24m[24mt[24me[24ms[24mt[24m1
-[J[0mtest1.java  [Jtest1Out  [J[A[0m[27m[24m[0m[39m[49m[18C[32mcat[39m test1[K[0m[39m[49m[4mt[4me[4ms[4mt[4m1[4m.[24m[4m.[4mjava[24m[1m [0m[0m [?1l>[?2004l
-[J]2;cat test1.java]1;cat//Project1 for java
-class A{
-    public static void main(String args[]){
-        System.out.println("Hello World");
-    }
-}
-[1m[7m%[27m[1m[0m                                                                ]2;elijahkorneffel@Elijahs-MacBook-Pro: ~/Git/CS2261-JAVA/Project1]1;..JAVA/Project1[0m[27m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_10_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m Test[4mt[4me[4ms[4mt[4m1.java[24m[1m [0m[0m [?1l>[?2004l
-]2;javac test1.java]1;javac[1m[7m%[27m[1m[0m                                                                ]2;elijahkorneffel@Elijahs-MacBook-Pro: ~/Git/CS2261-JAVA/Project1]1;..JAVA/Project1[0m[27m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_10_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mA[24m[?1l>[?2004l[24mA
-]2;java A]1;javaHello World
-[1m[7m%[27m[1m[0m                                                                ]2;elijahkorneffel@Elijahs-MacBook-Pro: ~/Git/CS2261-JAVA/Project1]1;..JAVA/Project1[0m[27m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_10_19 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
-
-Script done on Sun Feb 10 14:18:32 2019
