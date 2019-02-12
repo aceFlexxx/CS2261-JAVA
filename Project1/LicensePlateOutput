@@ -1,0 +1,59 @@
+Script started on Mon Feb 11 23:06:20 2019
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m [4mL[24m[4mL[4mi[24m[4mi[4mc[24m[4mc[4mensePlate[24m[4me[4m.[24m[4m.[4mj[24m[4mj[4ma[24m[4ma[4mv[24m[4mv[4ma[24m[1m [0m[0m [?1l>[?2004l
+kcat\//This program generates random license plates 
+import java.util.Scanner;
+import java.lang.Math;
+
+public class LicensePlate 
+{    
+    public static void main(String[] args)
+    {
+        createPlate();
+        
+    }
+    
+    public static void createPlate()
+    {
+
+        char charDisp1;
+        char charDisp2;
+        char charDisp3;
+        char charDisp4;
+        char charDisp5;
+        char charDisp6;
+
+        String licensePlate = "";
+        
+        System.out.println("Here are 10 random license plates:");
+        
+        for(int i = 0; i < 10; i++)//Create each char for the plate using random function
+        {
+            charDisp1 = (char)(65 + Math.random()*26);
+            charDisp2 = (char)(65 + Math.random()*26);
+            charDisp3 = (char)(48 + Math.random()*10);
+            charDisp4 = (char)(48 + Math.random()*10);
+            charDisp5 = (char)(65 + Math.random()*26);
+            charDisp6 = (char)(48 + Math.random()*10);
+            
+            licensePlate = charDisp1 + "" + charDisp2 + "" + charDisp3 + " " + charDisp4 + "" + charDisp5 + "" + charDisp6;
+            System.out.println(licensePlate);
+        }
+
+    }
+}
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[32mcat[39m [4mLicensePlate.java[24m[21D[39m [39m [39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [21D[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m l [4mL[24m[4mL[4mi[24m[4mi[4mcensePlate.java[24m[1m [0m[0m [?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mL[24m[4mL[4mi[24m[24mL[24micensePlate[1m [0m[13D[4mL[4mi[4mc[4me[4mn[4ms[4me[4mP[4ml[4ma[4mt[4me[24m[0m [?1l>[?2004l[12D[24mL[24mi[24mc[24me[24mn[24ms[24me[24mP[24ml[24ma[24mt[24me
+kjava\Here are 10 random license plates:
+HG6 0W3
+KU5 8F4
+NH1 5C7
+IN3 4X8
+IH9 8J8
+SC2 8B7
+XN8 5Z7
+MX7 2L5
+XP4 6H4
+PY6 4F1
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Mon Feb 11 23:07:07 2019

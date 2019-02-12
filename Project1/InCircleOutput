@@ -1,0 +1,62 @@
+Script started on Mon Feb 11 23:09:54 2019
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[39m [1m[31mj[1m[31ma[0m[39m[0m[39m [1m[31mj[0m[39m[0m[39m [0m[39m [1m[31mc[0m[39m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m [4mI[24m[4mI[4mn[24m[4mn[4mCircle[24m[4me[4m.[24m[4m.[4mj[24m[4mj[4mava[24m[1m [0m[0m [?1l>[?2004l
+kcat\//This program executes ex3.29
+import java.util.Scanner;
+import java.lang.Math;
+
+public class InCircle
+{    
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter circle1 info in format x-coord, y-coord, radius: ");
+        double x1 = input.nextDouble();
+        double y1 = input.nextDouble();
+        double radius1 = input.nextDouble();
+
+        System.out.print("Enter circle2 info in format x-coord, y-coord, radius: ");
+        double x2 = input.nextDouble();
+        double y2 = input.nextDouble();
+        double radius2 = input.nextDouble();
+        
+        String response = computeResponse(x1, y1, radius1, x2, y2, radius2);
+        
+        System.out.print(response);
+    }
+   
+    //This method discovers if a circle is overlapping, inside, or neither relative to another given circle. It then returns the info.
+    public static String computeResponse(double x1, double y1, double radius1, double x2, double y2, double radius2)
+    {
+        double distance;
+
+        distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2-y1, 2));
+        if(distance <= radius1 - radius2)
+        {
+            return "Circle2 is inside circle1.";
+
+        }
+        else if(distance <= radius1 + radius2)
+        {
+            return "Circle2 is overlapping circle1.";
+        }
+        else
+        {
+            return "Circle2 is neither inside or overlapping circle1.";
+        }
+
+    }
+    
+}
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m [4mI[24m[24mIN[4mI[4mn[4mCircle.java[24m[1m [0m[0m [?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mI[24m[4mI[4mn[24m[24mI[24mnCircle[1m [0m[9D[4mI[4mn[4mC[4mi[4mr[4mc[4ml[4me[24m[0m [?1l>[?2004l[8D[24mI[24mn[24mC[24mi[24mr[24mc[24ml[24me
+kjava\Enter circle1 info in format x-coord, y-coord, radius: 0,23   .23 0.1 2
+Enter circle2 info in format x-coord, y-coord, radius: 0 0 1.1
+Circle2 is inside circle1.[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[32mjava[39m [4mInCircle[24m[?1l>[?2004l[8D[24mI[24mn[24mC[24mi[24mr[24mc[24ml[24me
+kjava\Enter circle1 info in format x-coord, y-coord, radius: 0.0 0.0 2
+Enter circle2 info in format x-coord, y-coord, radius: 0 5.2 2 \  .1 1
+Circle2 is neither inside or overlapping circle1.[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[32mjava[39m [4mInCircle[24m[?1l>[?2004l[8D[24mI[24mn[24mC[24mi[24mr[24mc[24ml[24me
+kjava\Enter circle1 info in format x-coord, y-coord, radius: 0.0 0.0 2
+Enter circle2 info in format x-coord, y-coord, radius: 2.1 2 1.2 3
+Circle2 is overlapping circle1.[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project1\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project1 [43m[34m[30m  02_11_19 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Mon Feb 11 23:12:23 2019
