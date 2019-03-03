@@ -1,0 +1,74 @@
+Script started on Sat Mar  2 20:02:01 2019
+[1m[3m%[23m[1m[0m                                                                k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_02_19 [49m[33m[39m [K[?1h=[?2004h[4mc[24m[24m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m [4mC[24m[4mC[4mo[24m[4mo[4mm[24m[4mm[4mputingGCD[24m[4mD[4m.[24m[4m.[4mj[24m[4mj[4ma[24m[4ma[4mv[24m[4mv[4ma[24m[?1l>[?2004l
+kcat\//Class: CS2261-JAVA
+//Due Date: 03/04/19  
+//Author: Elijah Korneffel
+//Description: This script finds gcm of unspecified number of integers
+
+import java.util.Scanner;
+
+public class ComputingGCD
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter 5 integer numbers to compute gcd:");
+        System.out.println("Integer1:");
+        int integer1 = input.nextInt();
+        System.out.println("Integer2:");
+        int integer2 = input.nextInt();
+        System.out.println("Integer3:");
+        int integer3 = input.nextInt();
+        System.out.println("Integer4:");
+        int integer4 = input.nextInt();
+        System.out.println("Integer5:");
+        int integer5 = input.nextInt();
+
+        int output = gcd(integer1, integer2, integer3, integer4, integer5);
+        System.out.printf("The gcd is: %d ", output);
+    }
+
+    //This method receives integer numbers and returns the integer gcd
+    public static int gcd(int... numbers)
+    {
+        int gcd = 1; //Make initial gcd 1
+        int k = 2; //Guess of next gcd
+        for(int i = 0; i < numbers.length - 1; i++)
+        {
+            gcd = 1; //reset gcd to 1
+            k = 2; //reset gcd
+            
+            while(k <= numbers[i] && k <= numbers[i + 1])
+            {
+                if(numbers[i] % k == 0 && numbers[i + 1] % k == 0)
+                {
+                    gcd = k; //update gcd
+                }
+                
+                k++;
+            }
+            
+            numbers[i + 1] = gcd; //place the gcd in the next spot of the array
+
+        }
+
+        return gcd;
+
+    }
+}
+[1m[3m%[23m[1m[0m                                                                k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_02_19 [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m [4mC[24m[4mC[4momputingGCD.java[24m[1m [0m[0m [?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_02_19 [49m[33m[39m [K[?1h=[?2004h[32mjavac[39m [4mComputingGCD.java[24m[23D[39m [39m [39m [39m [39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [23D[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mC[24m[4mC[4mo[24m[4mo[4mm[24m[24mC[24mo[24mmputingGCD[1m [0m[13D[4mC[4mo[4mm[4mp[4mu[4mt[4mi[4mn[4mg[4mG[4mC[4mD[24m[0m [?1l>[?2004l[12D[24mC[24mo[24mm[24mp[24mu[24mt[24mi[24mn[24mg[24mG[24mC[24mD
+kjava\Enter 5 integer numbers to compute gcd:
+Integer1:
+10
+Integer2:
+15
+Integer3:
+20
+Integer4:
+30
+Integer5:
+40
+The gcd is: 5 [1m[3m%[23m[1m[0m                                                                k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_02_19 [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Sat Mar  2 20:03:46 2019
