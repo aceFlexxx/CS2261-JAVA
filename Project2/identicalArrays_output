@@ -1,0 +1,100 @@
+Script started on Sun Mar  3 08:30:41 2019
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[32mscript[39m [4midenticalArrays_output[24m[29D[32mc[32ml[32me[32ma[32mr[39m[39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24D[32ml[32ms[39m[39m [39m [39m [32mc[32ml[32mear[39m[32ml[32ms[39m[39m [39m [39m [32mj[32ma[32mva[39m [4mIdenticalArrays[24m[17D[32ma[32mc[39m[24m [4mI[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms.java[24m[23D[32ma[39m[P[15C[4ms[24m[24m [24m [24m [24m [24m  [17D[32ma[32mc[39m[24m [4mI[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms.java[24m[32ma[39m[P[21C [22D[1m[31mj[1m[31ma[1m[31mv[0m[39m[P[21C [22D[1m[31mj[1m[31ma[0m[39m[P[21C [22D[1m[31mj[0m[39m[P[21C [22D[P[21C [22D[1m[31mc[0m[39m[24m [4mI[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms[4m.[4mj[4ma[4mv[4ma[24m[21D[1m[31mc[1m[31ma[0m[39m[24m [4mI[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms[4m.[4mj[4ma[4mv[4ma[24m[21D[0m[32mc[0m[32ma[32mt[39m[24m [4mI[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms[4m.[4mj[4ma[4mv[4ma[24m[21D[?1l>[?2004l
+kcat\//Class: CS2261-JAVA
+//Due Date: 03/04/19  
+//Author: Elijah Korneffel
+//Description: This script finds if two arrays are identical.
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class IdenticalArrays 
+{
+    public static void main(String[] args)
+    {
+        int[] list1 = new int[1];
+        int[] list2 = new int[1];
+        boolean equal = false;
+
+        Scanner input = new Scanner(System.in);
+        list1 = inputList(input);
+        list2 = inputList(input); 
+        equal = identifyLists(list1, list2);
+        System.out.println(Arrays.toString(list1));
+        System.out.println(Arrays.toString(list2));
+        if(equal)
+            {
+                System.out.println("Your lists are equal.");
+            }
+        else
+        {
+            System.out.println("Your lists are not equal.");
+        }
+    }   
+    //This method takes the inputs from the user to build list.
+    public static int[] inputList(Scanner input)
+    {
+
+        int size = 0; 
+        int[] myArray;
+
+        System.out.print("Enter list size and elements:");
+        size = input.nextInt();
+        
+        myArray = new int[size];
+        //Allocate space for list size
+        
+        for(int i = 0; i < size; i++)
+        {
+            myArray[i] = input.nextInt();
+        }
+
+        return myArray;
+
+    }
+
+    //This method sorts the arrays and determines if they are equal.
+    public static boolean identifyLists(int[] array1, int[] array2)
+    {
+        boolean identical = false;
+        
+
+        //First check the size to see if it is worth sorting.
+        if(!(array1.length == array2.length))
+        {
+            return identical;
+        }
+        else
+        {
+            Arrays.sort(array1);
+            Arrays.sort(array2);
+
+            if(Arrays.equals(array1, array2))
+            {
+                identical = true;
+            }
+            else
+            {
+                identical = false;
+            }
+
+            return identical;
+        }
+    }
+}
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[32mcat[39m [4mIdenticalArrays.java[24m[24D[32ms[32mc[32mr[32mi[24m[32mp[24m[32mt[39m[24m [4mi[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms[4m_[4mo[4mutput[24m[29D[32mc[32ml[32me[32ma[32mr[39m[39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24D[32ml[32ms[39m[39m [39m [39m [32mc[32ml[32mear[39m[32ml[32ms[39m[39m [39m [39m [32mj[32ma[32mva[39m [4mIdenticalArrays[24m[17D[32ma[32mc[39m[24m [4mI[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms.java[24m[?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[32mjavac[39m [4mIdenticalArrays.java[24m[26D[32mc[32ma[32mt[39m[P[P[21C  [24D[32ms[32mc[32mr[32mi[24m[32mp[24m[32mt[39m[24m [4mi[4md[4me[4mn[4mt[4mi[4mc[4ma[4ml[4mA[4mr[4mr[4ma[4my[4ms[4m_[4mo[4mutput[24m[29D[32mc[32ml[32me[32ma[32mr[39m[39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24D[32ml[32ms[39m[39m [39m [39m [32mc[32ml[32mear[39m[32ml[32ms[39m[39m [39m [39m [32mj[32ma[32mva[39m [4mIdenticalArrays[24m[?1l>[?2004l[15D[24mI[24md[24me[24mn[24mt[24mi[24mc[24ma[24ml[24mA[24mr[24mr[24ma[24my[24ms
+kjava\Enter list size and elements:5 1 2 3 4 5
+Enter list size and elements:5 5 4 3 2 1
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+Your lists are equal.
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[32mjava[39m [4mIdenticalArrays[24m[?1l>[?2004l[15D[24mI[24md[24me[24mn[24mt[24mi[24mc[24ma[24ml[24mA[24mr[24mr[24ma[24my[24ms
+kjava\Enter list size and elements:5 1 2 3 4 1
+Enter list size and elements:5 2 3 4 3 2
+[1, 1, 2, 3, 4]
+[2, 2, 3, 3, 4]
+Your lists are not equal.
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Sun Mar  3 08:32:24 2019
