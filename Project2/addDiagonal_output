@@ -1,0 +1,89 @@
+Script started on Sun Mar  3 10:00:57 2019
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[0m[39m[0m[39m [0m[39m [4mc[24m[24m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m [4ma[24m[24m [4mA[24m[4mA[4md[24m[4md[4mdDiagonal[24m[4ml[4m.[24m[4m.[4mj[24m[4mj[4ma[24m[4ma[4mva[24m[1m [0m[0m [?1l>[?2004l
+kcat\//Class: CS2261-JAVA
+//Due Date: 03/04/19  
+//Author: Elijah Korneffel
+//Description: This script finds the sum of a 4x4 matrix diagonal.
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class AddDiagonal 
+{
+    public static void main(String[] args)
+    {
+        double[][] matrix = new double[4][4];
+        double sum = 0;
+        Scanner input = new Scanner(System.in);
+  
+        matrix = inputMatrix(input);
+        sum = addDiagonal(matrix);
+        printMatrix(matrix);
+        System.out.printf("Your diagonal sum is %f", sum);
+    }   
+    //This method isn't necessary but prints the matrix to view input. 
+    public static void printMatrix(double[][] myMatrix)
+    {
+        for(int i = 0; i < myMatrix.length; i++)
+        {
+
+            for(int j = 0; j < myMatrix[i].length; j++)
+            {
+                System.out.print("[");
+                System.out.print(myMatrix[i][j]);
+                System.out.print("]");
+            }
+            System.out.println("");
+        }
+    }
+
+    //This method takes the inputs from the user to build 4x4 matrix.
+    public static double[][] inputMatrix(Scanner input)
+    {
+
+        double[][] myMatrix = new double[4][4];
+
+        System.out.println("Enter 4x4 matrix row by row:");
+        for(int i = 0; i < myMatrix.length; i++)
+        {
+            for(int j = 0; j < myMatrix[i].length; j++)
+            {
+                myMatrix[i][j] = input.nextDouble();
+            }
+        }
+
+        return myMatrix;
+
+    }
+    //This method adds the diagonal of given matrix.
+    public static double addDiagonal(double[][] matrix)
+    {
+        double matrixSum = 0;
+
+        for(int i = 0; i < matrix.length; i++)
+        {
+            for(int j = 0; j < matrix[i].length; j++)
+            {
+                if(j == i)
+                {
+                    matrixSum += matrix[i][j];
+                }
+            } 
+        }
+        return matrixSum;
+    }
+}
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m [4mA[24m[4mA[4md[24m[4md[4mdDiagonal.java[24m[1m [0m[0m [?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[32mjavac[39m [4mAddDiagonal.java[24m[22D[39m [39m [39m [39m [39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [22D[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mA[24m[24mAddDiagonal[1m [0m[12D[4mA[4md[4md[4mD[4mi[4ma[4mg[4mo[4mn[4ma[4ml[24m[0m [?1l>[?2004l[11D[24mA[24md[24md[24mD[24mi[24ma[24mg[24mo[24mn[24ma[24ml
+kjava\Enter 4x4 matrix row by row:
+1   1.23 2 3 4
+1 -2.3 3 4
+1 2 3.33333 4
+12  2 3 -40.23
+[1.23][2.0][3.0][4.0]
+[1.0][-2.3][3.0][4.0]
+[1.0][2.0][3.33333][4.0]
+[1.0][2.0][3.0][-40.23]
+Your diagonal sum is -37.966670[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project2\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project2 [43m[34m[30m  project2_03_03_19 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Sun Mar  3 10:02:27 2019
