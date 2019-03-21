@@ -1,0 +1,167 @@
+Script started on Thu Mar 21 14:41:42 2019
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m [4mC[24m[4mC[4mi[24m[4mi[4mr[24m[4mr[4mc[24m[4mc[4mle2D[24m[4mD[4m.[24m[4m.[4mj[24m[4mj[4ma[24m[4ma[4mv[24m[4mv[4ma[24m[?1l>[?2004l
+kcat\//Class: CS2261-JAVA
+//Due Date: 03/20/19  
+//Author: Elijah Korneffel
+//Description: This script contains the Circle2D class 
+import java.lang.Math;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Circle2D 
+{
+    double x;
+    double y;
+    double radius;
+    
+
+    /* Default constructor */
+    public Circle2D()
+    {
+        x = 0;
+        y = 0;
+        radius = 1; 
+    }
+
+    /* Constructor with x, y, radius inputs */
+    public Circle2D(double x, double y, double radius)
+    {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+
+    //This method returns x value
+    public double getX()  
+    {
+        return x;
+    }
+    
+    //This method returns y value
+    public double getY()  
+    {
+        return y;
+    }
+    
+    //This method returns radius value
+    public double getRadius()  
+    {
+        return radius;
+    }
+    
+    //This method returns area of circle.
+    public double getArea()
+    {
+        double area = Math.PI * Math.pow(radius, 2); 
+        return area;
+    }
+    
+    //This method returns perimeter.
+    public double getPerimeter()
+    {
+        double perimeter = 2 * Math.PI * radius; 
+        return perimeter;
+    }
+    
+    //This method returns true if specefied (x, y) point is inside this circle.
+    public boolean contains(double x, double y)
+    {
+        double distance;
+
+        distance = Math.sqrt(Math.pow(this.x - x, 2) + Math.pow(this.y - y, 2));
+
+        //Checks if point is INSIDE circle - not on, so < vs <= is used.
+        if(distance < this.radius)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //This method returns true if specefied circle is inside this circle.
+    public boolean contains(Circle2D otherCircle)
+    {
+        double distance;
+
+        distance = Math.sqrt(Math.pow(this.x - otherCircle.x, 2) + Math.pow(this.y - otherCircle.y, 2));
+
+        //Check that the otherCircle is contained in this circle.
+        if(this.radius > (distance + otherCircle.radius))
+        {
+            return true;
+        }
+        else
+        { 
+            return false;
+        }
+    }
+
+    //This method returns true if specefied circle and this circle overlap.
+    public boolean overlaps(Circle2D otherCircle)
+    {
+        double distance;
+
+        distance = Math.sqrt(Math.pow(this.x - otherCircle.x, 2) + Math.pow(this.y - otherCircle.y, 2));
+
+        //Checks if otherCircle and this circle overlap.
+        if(distance < (this.radius + otherCircle.radius))
+        {
+            return true; 
+        }
+        else
+        {
+            return false;
+        }
+    }
+    //Tests out class 
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        Circle2D c1 = new Circle2D(2, 2, 5.5);
+
+        System.out.printf("Circle c1 perimeter: %f\n", c1.getPerimeter());
+        System.out.printf("Circle c1 area: %f", c1.getArea());
+
+        if(c1.contains(3, 3))
+        {
+            System.out.println("\nCircle c1 contains point (3, 3)");
+        }
+        else
+        {
+            System.out.println("Circle c1 does not contain point (3, 3)");
+        } 
+
+        if(c1.contains(new Circle2D(4, 5, 10.5)))
+        {
+            System.out.println("Circle c1 contains given Circle2D(2, 2, 5.5)");
+        }
+        else
+        {
+            System.out.println("Circle c1 does not contain given Circle2D(2, 2, 5.5)");
+        }
+
+        if(c1.overlaps(new Circle2D(3, 5, 2.3)))
+        {
+            System.out.println("Circle c1 overlaps given Circle2D(3, 5, 2.3)");
+        }
+        else
+        {
+            System.out.println("Circle c1 does not overlap given Circle2D(3, 5, 2.3)");
+        }
+    } 
+}
+
+
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m[1m[31mj[1m[31ma[1m[31mv[1m[31ma[1m[31mc[1m[31mC[0m[39m[1m[31mC[1m[31mi[0m[39m[1m[31mC[0m[39m[0m[39m [0m[32mj[0m[32ma[0m[32mv[0m[32ma[0m[32mc[39m[0m[39m  [4mC[24m[4mC[4mi[24m[4mi[4mrcle2D.java[24m[1m [0m[0m [?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mC[24m[4mC[4mi[24m[4mi[4mr[24m[4mr[4mc[24m[4mc[4ml[24m[4ml[4me[24m[4me[4m2[24m[4m2[4mD[24m[4mD[4m.[24m[4mD[24m[24m [8D[24mC[24mi[24mr[24mc[24ml[24me[24m2[24mD[1m [0m[9D[4mC[4mi[4mr[4mc[4ml[4me[4m2[4mD[24m[0m [?1l>[?2004l[8D[24mC[24mi[24mr[24mc[24ml[24me[24m2[24mD
+kjava\Circle c1 perimeter: 34.557519
+Circle c1 area: 95.033178
+Circle c1 contains point (3, 3)
+Circle c1 does not contain given Circle2D(2, 2, 5.5)
+Circle c1 overlaps given Circle2D(3, 5, 2.3)
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Thu Mar 21 14:42:12 2019

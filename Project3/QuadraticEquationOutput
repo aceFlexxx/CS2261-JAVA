@@ -1,0 +1,123 @@
+Script started on Thu Mar 21 14:31:39 2019
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m [4mQ[24m[4mQ[4mu[24m[24mQ[24mudad  [4mQ[4mu[24m [4mu[4ma[24m[4ma[4md[24m[4md[4mraticEquation[24m[4mn[4m.[24m[4m.[4mj[24m[4mj[4ma[24m[4ma[4mv[24m[4mv[4ma[24m[?1l>[?2004l
+kcat\//Class: CS2261-JAVA
+//Due Date: 03/20/19  
+//Author: Elijah Korneffel
+//Description: This script contains the QuadraticEquation class to be
+//used with the format ax2+bx+c=0
+import java.lang.Math;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class QuadraticEquation 
+{
+    double a;
+    double b;
+    double c;
+    
+
+    /* Constructor with a, b, c input coefficients */
+    public QuadraticEquation(double a, double b, double c)
+    {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    //This method returns a value
+    public double getA()  
+    {
+        return a;
+    }
+    
+    //This method returns b value
+    public double getB()  
+    {
+        return b;
+    }
+    
+    //This method returns c value
+    public double getC()  
+    {
+        return c;
+    }
+    
+    //This method returns discriminant value b*2-4*a*c. Returns 0 if discriminant is negative.
+    public double getDiscriminant()
+    {
+        double discriminant = Math.pow(b, 2) - 4*a*c; 
+        return discriminant;
+    }
+    
+    //This method returns root1 value. Returns 0 if discriminant is negative.
+    public double getRoot1()
+    {
+        double root1;
+        if(getDiscriminant() < 0)
+        {
+            root1 = 0;
+
+        }
+        else
+        {
+            root1 = (-b + Math.sqrt(getDiscriminant())) / (2*a);
+        } 
+            return root1; 
+    }
+
+    //This method returns root2 value. Returns 0 if discriminant is negative.
+    public double getRoot2()
+    {
+        double root2;
+        if(getDiscriminant() < 0)
+        {
+            root2 = 0;
+
+        }
+        else
+        {
+            root2 = (-b - Math.sqrt(getDiscriminant())) / (2*a);
+        } 
+            return root2; 
+    }
+    //Tests out class 
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        double ain;
+        double bin;
+        double cin;
+
+        System.out.print("Enter a, b, c:");
+        ain = input.nextDouble();
+        bin = input.nextDouble();
+        cin = input.nextDouble();
+        
+        QuadraticEquation equation = new QuadraticEquation(ain, bin, cin);
+        //Displays corresponding roots based on discriminant
+        if(equation.getDiscriminant() < 0)
+        {
+            System.out.println("Your equation has no roots.");
+        }
+        else if(equation.getDiscriminant() > 0)
+        { 
+            System.out.printf("Your equation has the roots: %f and %f", equation.getRoot1(), equation.getRoot2());        
+        } 
+        else
+        {
+            System.out.printf("Your equation has the root: %f", equation.getRoot1());        }
+    }   
+
+
+}
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m q [4mQ[24m[4mQ[4muadraticEquation[24m[4mn[4m.[24m[4mn[24m[24m [4mn[4m.[24m[4m.[4mj[24m[4mj[4ma[24m[4ma[4mv[24m[4mv[4ma[24m[?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mQ[24m[24mQuadraticEquation[1m [0m[18D[4mQ[4mu[4ma[4md[4mr[4ma[4mt[4mi[4mc[4mE[4mq[4mu[4ma[4mt[4mi[4mo[4mn[24m[0m [?1l>[?2004l[17D[24mQ[24mu[24ma[24md[24mr[24ma[24mt[24mi[24mc[24mE[24mq[24mu[24ma[24mt[24mi[24mo[24mn
+kjava\Enter a, b, c:1.0 3 1
+Your equation has the roots: -0.381966 and -2.618034[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[32mjava[39m [4mQuadraticEquation[24m[?1l>[?2004l[17D[24mQ[24mu[24ma[24md[24mr[24ma[24mt[24mi[24mc[24mE[24mq[24mu[24ma[24mt[24mi[24mo[24mn
+kjava\Enter a, b, c:1 2.0 1
+Your equation has the root: -1.000000[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[32mjava[39m [4mQuadraticEquation[24m[?1l>[?2004l[17D[24mQ[24mu[24ma[24md[24mr[24ma[24mt[24mi[24mc[24mE[24mq[24mu[24ma[24mt[24mi[24mo[24mn
+kjava\Enter a, b, c:1 2 3
+Your equation has no roots.
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project3\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project3 [43m[34m[30m  project3_03_20_19 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Thu Mar 21 14:32:48 2019
