@@ -1,0 +1,201 @@
+Script started on Wed Apr 17 13:43:46 2019
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project4\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project4 [43m[34m[30m  04_12_19_Proj4 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[1m[31ma[0m[39m[0m[32mc[0m[32ma[32mt[39m [4mE[24m[4mE[4mx[24m[4mx[4m1[24m[24mE[24mx[24m1
+[0mEx11_2_Test.class                   Ex11_2_Test\$Faculty.class          Ex13_9_Test.class                 
+Ex11_2_Test.java                    Ex11_2_Test\$Person.class           Ex13_9_Test.java                  
+Ex11_2_TestOutput                   Ex11_2_Test\$Staff.class            Ex13_9_Test\$Circle.class         
+[JEx11_2_Test\$Employee.class         [JEx11_2_Test\$Student.class          [JEx13_9_Test\$GeometricObject.class[J[4A[0m[23m[24m[0m[39m[49m[89C[32mcat[39m Ex1[K[0m[39m[49m[4mE[4mx[4m1[4m1[24m
+[JM[97C[4m1[4m_2_Test[24m[4mt[4m.[24m[4m.[4mj[24m[4mj[4ma[24m[4ma[4mv[24m[4mv[4ma[24m[?1l>[?2004l
+[Jkcat\//Class: CS2261-JAVA
+//Due Date: 04/15/19  
+//Author: Elijah Korneffel
+//Description: This script contains the Person, Student, Employee, Faculty, and Staff classes 
+public class Ex11_2_Test 
+{
+
+
+
+    public static class Person
+    {
+
+        String name; 
+        String address;
+        String phone;
+        String email;
+        /* Default constructor */
+        public Person()
+        {
+        
+        }
+
+        /* Constructor with inputs */
+        public Person(String name, String address, String phone, String email)
+        {
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.email = email;
+        }
+
+        
+        //This method returns string with the identity of the class and name.
+        @Override    
+        public String toString()
+        {
+            String id = "Person, ";
+            id += name;
+            return id;
+        }
+    }
+
+    public static class Employee extends Person 
+    {        
+        String office;
+        String salary;
+        String dateHired;
+        
+        /* Default constructor */
+        public Employee()
+        {
+        
+        }
+        /* Constructor with inputs */
+        public Employee(String name, String address, String phone, String email, String office, String salary, String dateHired)
+        { 
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.email = email;
+            this.office = office;
+            this.salary = salary;
+            this.dateHired = dateHired;
+            
+        }
+
+        
+        //This method returns string with the identity of the class and name.
+        @Override    
+        public String toString()
+        {
+            String id = "Employee, ";
+            id += name;
+            return id;
+        }
+        
+    }
+
+    public static class Student extends Person 
+    {   
+        
+        final String classStatus;
+        /* Constructor with inputs */
+        public Student(String name, String address, String phone, String email, String classStatus)
+        {
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.email = email;
+            this.classStatus = classStatus;
+        }
+        
+        //This method returns string with the identity of the class and name.
+        @Override    
+        public String toString()
+        {
+            String id = "Student, ";
+            id += name;
+            return id;
+        }
+        
+    }
+
+    
+    public static class Faculty extends Employee  
+    {        
+        String hours;
+        String rank;
+        /* Constructor with inputs */
+        public Faculty(String name, String address, String phone, String email, String office, String salary, String dateHired, String hours, String rank)
+        { 
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.email = email;
+            this.office = office;
+            this.salary = salary;
+            this.dateHired = dateHired;
+            this.hours = hours;
+            this.rank = rank;
+        }
+
+        
+        //This method returns string with the identity of the class and name.
+        @Override    
+        public String toString()
+        {
+            String id = "Faculty, ";
+            id += name;
+            return id;
+        }
+        
+    }
+
+
+    public static class Staff extends Employee  
+    {        
+        String title;
+        /* Constructor with inputs */
+        public Staff(String name, String address, String phone, String email, String office, String salary, String dateHired, String title)
+        { 
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.email = email;
+            this.office = office;
+            this.salary = salary;
+            this.dateHired = dateHired;
+            this.title = title;
+        }
+
+        
+        //This method returns string with the identity of the class and name.
+        @Override    
+        public String toString()
+        {
+            String id = "Staff, ";
+            id += name;
+            return id;
+        }
+        
+    }
+
+    //Tests out class 
+    public static void main(String[] args)
+    {
+        
+        Person person1 = new Person("Dan Hold", "Avenue", "314-999-9999", "dan@gmail.com");
+        Employee employee1 = new Employee("Aaron Lueffer", "Avenue", "314-999-9999", "dan@gmail.com", "R107", "60000", "01/01/01");
+        Student student1 = new Student("Bryce Landgraf", "Avenue", "314-999-9999", "bryceL@gmail.com", "Freshman");
+       
+        Faculty faculty1 = new Faculty("Harding Bell", "avenue", "314-999-9999", "hardingB@gmail.com","R207", "80000", "01/01/01", "MW11-2", "Dean");
+        Staff staff1 = new Staff("Carter Jackson", "Avenue", "314-999-9999", "carterJ@gmail.com", "R17", "30000", "01/01/01", "janitor");
+
+        System.out.println(person1.toString());
+        System.out.println(employee1.toString()); 
+        System.out.println(student1.toString()); 
+        System.out.println(faculty1.toString()); 
+        System.out.println(staff1.toString()); 
+
+    }
+
+}
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project4\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project4 [43m[34m[30m  04_12_19_Proj4 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m[32ma[32mc[39m [4mE[24m[4mE[4mx[24m[4mx[4m1[24m[4m1[4m1[24m[4m1[4m_2_Test.java[24m[1m [0m[0m [?1l>[?2004l
+kjavac\[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project4\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project4 [43m[34m[30m  04_12_19_Proj4 ● [49m[33m[39m [K[?1h=[?2004h[1m[31mj[0m[39m[1m[31mj[1m[31ma[0m[39m[1m[31mj[1m[31ma[1m[31mv[0m[39m[0m[32mj[0m[32ma[0m[32mv[32ma[39m [4mE[24m[4mE[4mx[24m[4mx[4m1[24m[4m1[4m1[24m[4m1[4m_2_Test[24m[?1l>[?2004l[11D[24mE[24mx[24m1[24m1[24m_[24m2[24m_[24mT[24me[24ms[24mt
+kjava\Person, Dan Hold
+Employee, Aaron Lueffer
+Student, Bryce Landgraf
+Faculty, Harding Bell
+Staff, Carter Jackson
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project4\[0m[23m[24m[J[39m[0m[49m[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project4 [43m[34m[30m  04_12_19_Proj4 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+[1m[3m%[23m[1m[0m                                                                                                                                  k..JAVA/Project4\[0m[23m[24m[J[39m[0m[49m[40m[39m [31m✘[40m[39m elijahkorneffel@Elijahs-MacBook-Pro [44m[30m[30m ~/Git/CS2261-JAVA/Project4 [43m[34m[30m  04_12_19_Proj4 ● [49m[33m[39m [K[?1h=[?2004h[?2004l
+
+Script done on Wed Apr 17 13:45:36 2019
